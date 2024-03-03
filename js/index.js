@@ -88,13 +88,19 @@ const displayPosts = allPosts =>{
 }
 
 // search button
-const  handleSearch = () =>{
+const  handleSearch = () =>{  
   toggleLoadingspinner(true);
+
+  // setTimeout(() =>{
+  //   toggleLoadingspinner(true)
+  // },5000)
+  
 const searchField = document.getElementById('search-field');
 const searchText = searchField.value;
-console.log(searchText);
-loadAllpost(searchText);
+setTimeout(() =>{
 
+  loadAllpost(searchText);
+},5000)
 }
 const toggleLoadingspinner = (isLoading) =>{
   const loadingSpinner = document.getElementById('loading-spinner')
@@ -105,6 +111,16 @@ else{
   loadingSpinner.classList.add('hidden');
 }
 }
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -154,21 +170,6 @@ const newLoadAllpost = async () =>{
   }
 
   newLoadAllpost()
-
-
-
-
-
-  //click
-// let count=0;
-//   function clickButton(){
-//     const clickCount = document.getElementById('count-click')
-//     count++;
-//     clickCount.innerText=count;
-   
-   
-
-//   }
 let count=0;
   const clickButton = (text,view_count) => {
         const clickCount = document.getElementById('count-click')
