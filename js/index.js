@@ -1,5 +1,13 @@
-const loadAllpost = async (searchText='comedy') =>{
-const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${searchText}`);
+const loadAllpost = async (searchText) =>{
+  if(searchText){
+    res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${searchText}`);
+}
+else{
+    
+
+    res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts`);
+
+}
 const data = await res.json();
 const allPosts = data.posts;
 
@@ -7,8 +15,11 @@ displayPosts(allPosts);
 
 }
 
+
+
 const displayPosts = allPosts =>{
-   const  postContainer = document.getElementById('post-container')
+   const  postContainer = document.getElementById('post-container');
+   postContainer.textContent ='';
     for(const post of allPosts){
         //console.log(post);
       const indicator = post.isActive;
