@@ -83,21 +83,29 @@ const displayPosts = allPosts =>{
       </div>`
       postContainer.appendChild(postCard);
     }
+    //hide loading spinner
+    toggleLoadingspinner(false);
 }
 
 // search button
 const  handleSearch = () =>{
+  toggleLoadingspinner(true);
 const searchField = document.getElementById('search-field');
 const searchText = searchField.value;
 console.log(searchText);
 loadAllpost(searchText);
 
 }
+const toggleLoadingspinner = (isLoading) =>{
+  const loadingSpinner = document.getElementById('loading-spinner')
+if(isLoading){
+  loadingSpinner.classList.remove('hidden')
+}
+else{
+  loadingSpinner.classList.add('hidden');
+}
+}
 
-
-
-
-// jkghth
 
 
 loadAllpost()
