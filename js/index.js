@@ -29,14 +29,14 @@ const displayPosts = allPosts =>{
         const postCard = document.createElement('div')
         postCard.classList = `bg-[#F3F3F5] rounded-3xl mb-6 `;
         postCard.innerHTML = `
-        <div class="flex-col lg:flex-row flex justify-center items-center gap-4 py-10 px-10">
+        <div class="flex-col lg:flex-row flex gap-4 py-10 px-10">
         <div class="indicator">
         <span class="indicator-item badge badge-${indicatorColor}"></span>
         <div class="grid w-32 h-32 bg-base-300 place-items-center rounded-3xl overflow-hidden">
             <img class="" src="${post.image}" alt="">
         </div>
     </div>
-        <div class="my-5">
+        <div class="my-5 w-full">
        <div class="flex  gap-6 text-[#12132DCC] text-sm font-medium ">
           <p>#${post.category}</p>
           <p>Author :${post.author.name}</p>
@@ -44,7 +44,7 @@ const displayPosts = allPosts =>{
 
        <div class="divide-y divide-dashed divide-[#12132D40] my-3 ">
           <div> <h1 class="text-[#12132D] text-xl font-bold">${post.title}</h1>
-              <p class="my-4 pr-3 text-[#12132D99] w-3/4">${post.description}</p></div>
+              <p class=" text-[#12132D99]">${post.description}</p></div>
          <div class="flex flex-col lg:flex-row pt-6 justify-center items-center lg:justify-between">
           <div class="flex text-[#12132D99]">
               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
@@ -90,17 +90,16 @@ const displayPosts = allPosts =>{
 // search button
 const  handleSearch = () =>{  
   toggleLoadingspinner(true);
-
-  // setTimeout(() =>{
-  //   toggleLoadingspinner(true)
-  // },5000)
-  
+ 
 const searchField = document.getElementById('search-field');
 const searchText = searchField.value;
+searchField.value=" ";
+document.getElementById('card').classList.add('hidden')
+// set loadding spinner time
 setTimeout(() =>{
-
+  document.getElementById('card').classList.remove('hidden')
   loadAllpost(searchText);
-},5000)
+},2000)
 }
 const toggleLoadingspinner = (isLoading) =>{
   const loadingSpinner = document.getElementById('loading-spinner')
