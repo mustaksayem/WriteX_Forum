@@ -44,7 +44,7 @@ const displayPosts = allPosts =>{
 
        <div class="divide-y divide-dashed divide-[#12132D40] my-3 ">
           <div> <h1 class="text-[#12132D] text-xl font-bold text-center lg:text-start">${post.title}</h1>
-              <p class=" text-[#12132D99] text-center lg:text-start">${post.description}</p></div>
+              <p class=" text-[#12132D99] text-center lg:text-start font-inter">${post.description}</p></div>
          <div class="flex flex-col lg:flex-row pt-6 justify-center items-center lg:justify-between">
           <div class="flex text-[#12132D99]">
               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
@@ -181,10 +181,10 @@ let count=0;
 
      const  postContainer = document.getElementById('post-side-container')
      const sidepostCard = document.createElement('div')
-     sidepostCard.classList = `bg-white mx-6 my-4 p-4 rounded-2xl flex`
+     sidepostCard.classList = `bg-white mx-0 lg:mx-6 my-4 p-2 lg:p-4 rounded-2xl flex`
      sidepostCard.innerHTML = `
      <div>
-     <h2 class="font-semibold w-64 ">${text}</h2>
+     <h2 class="font-semibold w-full lg:w-64 ">${text}</h2>
  </div>
  <div class="ml-1 flex justify-center items-center text-center text-[#12132D99]">
    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">

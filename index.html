@@ -32,10 +32,27 @@
 
 <body>
 
-  <header class="font-mulish bg-[#FFF] lg:px-40 lg:py-14">
+  <header class="font-mulish bg-[#FFF] px-10 lg:px-40 py-10 lg:py-14">
     <!-- navbar section -->
 
     <div class="navbar bg-base-100 flex justify-between">
+
+      <div class="dropdown lg:hidden ">
+        <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
+        </div>
+        <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+          <li><a>Home</a></li>
+          <li><a>Edit</a></li>
+          <li><a>Add</a></li>
+          <li><a>Mark</a></li>
+        </ul>
+      </div>
+
+
+
+
+
       <div class="">
         <a class="btn btn-ghost  text-[#12132D] font-black text-3xl">ReTro</a>
       </div>
@@ -114,7 +131,7 @@
   </header>
 
 
-  <main class="font-mulish bg-[#FFF] lg:px-40 ">
+  <main class="font-mulish bg-[#FFF] px-10 lg:px-40 ">
     
 <!-- loadder -->
 
@@ -192,9 +209,9 @@
 
     <!-- join our fourm -->
     <section>
-      <div class="hero  bg-[#12132D] rounded-3xl mt-16 lg:mt-24 py:6 lg:py-24">
+      <div class="hero  bg-[#12132D] rounded-3xl mt-16 lg:mt-24  lg:py-24">
         <div class="hero-content flex-col lg:flex-row-reverse">
-          <img src="./images/joinforum.png" class="max-w-sm rounded-lg shadow-2xl" />
+          <img src="./images/joinforum.png" class="max-w-xs lg:max-w-sm rounded-lg shadow-2xl" />
           <div class="text-center lg:text-left lg:px-24">
             <h1 class="text-4xl font-black text-[#FFFFFF] ">Join Our Forum</h1>
             <p class="py-6 text-[#FFFFFFCC] text-lg">Share your favorite opinion and win and wp forum coffee mug! Yes,
