@@ -29,7 +29,7 @@ const displayPosts = allPosts =>{
         const postCard = document.createElement('div')
         postCard.classList = `bg-[#F3F3F5] rounded-3xl mb-6 `;
         postCard.innerHTML = `
-        <div class="flex-col lg:flex-row flex gap-4 py-10 px-10">
+        <div class="flex-col lg:flex-row items-center flex gap-4 py-10 px-10">
         <div class="indicator">
         <span class="indicator-item badge badge-${indicatorColor}"></span>
         <div class="grid w-32 h-32 bg-base-300 place-items-center rounded-3xl overflow-hidden">
@@ -37,14 +37,14 @@ const displayPosts = allPosts =>{
         </div>
     </div>
         <div class="my-5 w-full">
-       <div class="flex  gap-6 text-[#12132DCC] text-sm font-medium ">
+       <div class="flex justify-center lg:justify-start  gap-6 text-[#12132DCC] text-xl lg:text-sm font-semibold lg:font-medium   font-inter">
           <p>#${post.category}</p>
           <p>Author :${post.author.name}</p>
        </div>
 
        <div class="divide-y divide-dashed divide-[#12132D40] my-3 ">
-          <div> <h1 class="text-[#12132D] text-xl font-bold">${post.title}</h1>
-              <p class=" text-[#12132D99]">${post.description}</p></div>
+          <div> <h1 class="text-[#12132D] text-xl font-bold text-center lg:text-start">${post.title}</h1>
+              <p class=" text-[#12132D99] text-center lg:text-start">${post.description}</p></div>
          <div class="flex flex-col lg:flex-row pt-6 justify-center items-center lg:justify-between">
           <div class="flex text-[#12132D99]">
               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
@@ -169,6 +169,9 @@ const newLoadAllpost = async () =>{
   }
 
   newLoadAllpost()
+
+
+
 let count=0;
   const clickButton = (text,view_count) => {
         const clickCount = document.getElementById('count-click')
