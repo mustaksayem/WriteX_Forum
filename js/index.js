@@ -21,7 +21,6 @@ const displayPosts = allPosts =>{
    const  postContainer = document.getElementById('post-container');
    postContainer.textContent ='';
     for(const post of allPosts){
-        //console.log(post);
       const indicator = post.isActive;
       let indicatorColor = indicator ? "success" : "error"
 
@@ -37,14 +36,14 @@ const displayPosts = allPosts =>{
         </div>
     </div>
         <div class="my-5 w-full">
-       <div class="flex justify-center lg:justify-start  gap-6 text-[#12132DCC] text-xl lg:text-sm font-semibold lg:font-medium   font-inter">
+       <div class="flex justify-center lg:justify-start  gap-6 text-[#12132DCC] text-base lg:text-sm font-semibold lg:font-medium   font-inter">
           <p>#${post.category}</p>
           <p>Author :${post.author.name}</p>
        </div>
 
        <div class="divide-y divide-dashed divide-[#12132D40] my-3 ">
           <div> <h1 class="text-[#12132D] text-xl font-bold text-center lg:text-start">${post.title}</h1>
-              <p class=" text-[#12132D99] text-center lg:text-start font-inter">${post.description}</p></div>
+              <p class=" text-[#12132D99] text-center lg:text-start font-inter my-4">${post.description}</p></div>
          <div class="flex flex-col lg:flex-row pt-6 justify-center items-center lg:justify-between">
           <div class="flex text-[#12132D99]">
               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
@@ -93,7 +92,7 @@ const  handleSearch = () =>{
  
 const searchField = document.getElementById('search-field');
 const searchText = searchField.value;
-searchField.value=" ";
+searchField.value="";
 document.getElementById('card').classList.add('hidden')
 // set loadding spinner time
 setTimeout(() =>{
@@ -110,18 +109,6 @@ else{
   loadingSpinner.classList.add('hidden');
 }
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 loadAllpost()
 
